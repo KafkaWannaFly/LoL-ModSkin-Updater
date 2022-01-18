@@ -23,6 +23,7 @@ async Task<string> DownloadFile(string resourcePath)
 
     using (var webClient = new WebClient())
     {
+        webClient.Proxy = null;
         webClient.DownloadProgressChanged += (sender, e) =>
         {
             ClearCurrentConsoleLine();
